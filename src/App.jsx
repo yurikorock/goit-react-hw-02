@@ -28,8 +28,11 @@ const App = () => {
     <>
       <Description />
       <Option updateFeedback={updateFeedback} />
-      <Notification message="No feedback yet" />
-      <Feedback feedback={feedback} />
+      {totalFeedback > 0 ? (
+        <Feedback feedback={feedback} />
+      ) : (
+        <Notification message="No feedback yet" />
+      )}
     </>
   );
 };
