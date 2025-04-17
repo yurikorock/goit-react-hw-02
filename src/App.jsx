@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-import "./App.module.css";
+import css from "./App.module.css";
 import Description from "./components/Description/Description";
 import Option from "./components/Option/Option";
 import Feedback from "./components/Feedback/Feedback";
@@ -43,7 +43,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className={css.container}>
       <Description />
       <Option
         resetFeedback={resetFeedback}
@@ -59,7 +59,7 @@ const App = () => {
       ) : (
         <Notification message="No feedback yet" />
       )}
-    </>
+    </div>
   );
 };
 export default App;

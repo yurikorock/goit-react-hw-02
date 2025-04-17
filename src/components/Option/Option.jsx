@@ -1,4 +1,5 @@
 //Option.jsx
+import css from "./Option.module.css";
 
 export default function Option({
   updateFeedback,
@@ -6,12 +7,19 @@ export default function Option({
   totalFeedback,
 }) {
   return (
-    <>
-      <button onClick={() => updateFeedback("good")}>Good</button>
-      <button onClick={() => updateFeedback("neutral")}>Neutral</button>
-      <button onClick={() => updateFeedback("bad")}>Bad</button>
+    <div className={css.option}>
+      <button className={css.btn} onClick={() => updateFeedback("good")}>
+        Good
+      </button>
+      <button className={css.btn} onClick={() => updateFeedback("neutral")}>
+        Neutral
+      </button>
+      <button className={css.btn} onClick={() => updateFeedback("bad")}>
+        Bad
+      </button>
       {totalFeedback > 0 && (
         <button
+          className={css.btn}
           onClick={() => {
             resetFeedback();
           }}
@@ -19,6 +27,6 @@ export default function Option({
           Reset
         </button>
       )}
-    </>
+    </div>
   );
 }
